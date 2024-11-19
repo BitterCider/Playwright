@@ -22,12 +22,7 @@ module.exports = defineConfig({
   workers: process.env.CI ? 2 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: [
-    [
-      "html",
-      {
-        open: "never",
-      },
-    ],
+    ["html",{open: "never", outputFolder: "playwright-report"}],
     ["list"],
   ],
 
@@ -38,10 +33,7 @@ module.exports = defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: "on",
-    screenshot: {
-      mode: "only-on-failure",
-      fullPage: true,
-    },
+    screenshot: {mode: "only-on-failure", fullPage: true},
     video: "retain-on-failure",
   },
 
