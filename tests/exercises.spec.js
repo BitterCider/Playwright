@@ -36,7 +36,7 @@ test.describe("checklist validation", () => {
 });
 
 //4
-test.describe.only("slider validation", () => {
+test.describe("slider validation", () => {
   test("isDisabled", async ({ page }) => {
     await expect(page.locator("#tried-test-cafe")).not.toBeChecked();
     await expect(page.locator("#slider")).toHaveClass(/ui-slider-disabled/);
@@ -60,7 +60,7 @@ test("isEnabled", async ({ page }) => {
 
 //7
 test("submitIsDisabled", async ({page}) =>{
-  await expect(page.locator("#submit-button")).toHaveAttribute("disabled")
+  await expect(page.locator("#submit-button")).toBeDisabled()
 });
 
 //8
